@@ -1,4 +1,4 @@
-# practic-fetch
+# rest-api
 
 ## Project setup
 ```
