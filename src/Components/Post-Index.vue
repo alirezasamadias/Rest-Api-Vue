@@ -1,5 +1,8 @@
 <template>
-  <h3 class="title-lg">posts</h3>
+  <div class="hero container">
+    <i class="hero-icon title-lg icon-posts"></i>
+    <h2 class="title-lg">posts</h2>
+  </div>
 
   <router-link :to="{name: 'create-post'}" class="btn btn-create">create post</router-link>
   

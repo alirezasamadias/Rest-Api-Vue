@@ -1,4 +1,9 @@
 <template>
+  <div class="hero container">
+    <i class="hero-icon title-lg icon-user"></i>
+    <h2 class="title-lg">user</h2>
+  </div>
+
   <div class="container container-sm">
     <section class="card">
       <h3 class="title-md">{{user.name}}</h3>

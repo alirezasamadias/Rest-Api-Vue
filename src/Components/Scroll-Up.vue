@@ -1,5 +1,5 @@
 <template>
-  <a href='#' class= "scroll-up btn-primary" :class="[show ? '' : 'hide']"></a>
+  <a href='#' class= "scroll-up icon-up btn-primary" :class="[show ? '' : 'hide']"></a>
 </template>
 
 <script setup>
@@ -18,13 +18,11 @@ window.addEventListener('scroll',()=>{
 
 <style scoped>
 .scroll-up {
-  width: 50px;
-  height: 50px;
   cursor: pointer;
   padding: 8px;
   border-radius: 10px;
   position: fixed;
-  bottom: 8%;
+  bottom: 4%;
   right: 2%;
   z-index: 99;
   font-size: 32px;

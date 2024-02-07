@@ -18,7 +18,7 @@
 
 <style>
 .menu {
-    column-gap: 40px;
+    column-gap: 5%;
     text-transform: capitalize;
 }
 

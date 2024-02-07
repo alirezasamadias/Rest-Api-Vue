@@ -1,5 +1,12 @@
 <template>
-  <h2 title="title-md">edit user</h2>
+  <div class="hero container">
+    <div class="hero-icon title-lg">
+      <i class="icon-user"></i>
+      <i class="icon-edit-user"></i>
+    </div>
+
+    <h2 class="title-lg">edit user</h2>
+  </div>
   
   <div class="container container-sm">
     <form class="card">

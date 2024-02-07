@@ -1,4 +1,9 @@
 <template>
+  <div class="hero container">
+    <i class="hero-icon title-lg icon-post"></i>
+    <h2 class="title-lg">post</h2>
+  </div>
+
   <div class="container container-sm">
     <section class="card">
       <span class="card-id">{{post.id}}</span>

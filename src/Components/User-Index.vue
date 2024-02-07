@@ -1,5 +1,8 @@
 <template>
-  <h2 class="title-lg">users</h2>
+  <div class="hero container">
+    <i class="hero-icon title-lg icon-users"></i>
+    <h2 class="title-lg">users</h2>
+  </div>
   
   <div class="container card-wrapper">
     <section class="card" v-for="user in users" :key="user.id">

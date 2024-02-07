@@ -1,7 +1,8 @@
 import { createApp } from 'vue';
 import router from './Router';
 // Css
-import './Assets/Css/main.css';
+import './Assets/Css/Font-Icon.css';
+import './Assets/Css/Main.css';
 // Components
 import App from './App.vue';
 

@@ -3,7 +3,7 @@
     <h2 class="title-sm">&copy; 2024 alireza samadi</h2>
 
     <nav>
-      <a href="https://github.com/alirezasamadias/">github</a>
+      <a href="https://github.com/alirezasamadias/" class="icon-github"></a>
     </nav>
   </section>
 
