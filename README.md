@@ -1,6 +1,6 @@
 # Rest-Api
 
-![alt text](./src/Assets/Images/Screen-Project.png)
+![alt text](src/Assets/Images/Screen-Project.png)
 
 ## Project setup
 ```
