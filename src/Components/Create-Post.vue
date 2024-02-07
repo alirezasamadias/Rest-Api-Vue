@@ -24,7 +24,7 @@
 <script setup>
 import axios from 'axios';
 import { reactive } from 'vue';
-import { urlPosts } from '@/Server/Spi.js';
+import { urlPosts } from '@/Server/Api.js';
 import Swal from 'sweetalert2';
 
 const post = reactive({
