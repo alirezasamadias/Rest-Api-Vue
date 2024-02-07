@@ -1,7 +1,6 @@
 # Rest-Api
 
-## Image Project
-![alt text](./src/Assets/Images/Hero-Vertical.jpg)
+![alt text](./src/Assets/Images/Screen-Project.png)
 
 ## Project setup
 ```
