@@ -15,8 +15,20 @@
 import ScrollUp from '../Components/Scroll-Up.vue';
 </script>
 
-<style>
-  #footer .container {
+<style scoped>
+  .container {
     justify-content: space-between;
+  }
+
+  .icon-github {
+    font-size: 32px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      row-gap: 15px;
+    }
   }
 </style>
