@@ -1,6 +1,6 @@
 # Rest Api
 
-![Screen Project](./src/assets/Images/Screen-Project.png)
+![Screen Project](src/assets/Images/Screen-Project.png)
 
 ## Url
 
