@@ -1,9 +1,9 @@
 <template>
   <div class="hero container">
     <picture>
-      <source media="(max-width:600px)" srcset="../Assets/Images/Hero-Horizontal.jpg">
+      <source media="(max-width:600px)" srcset="../assets/Images/Hero-Horizontal.jpg">
       
-      <img src="../Assets/Images/Hero-Vertical.jpg" alt="rest api">
+      <img src="../assets/Images/Hero-Vertical.jpg" alt="rest api">
     </picture>
   </div>
 </template>
