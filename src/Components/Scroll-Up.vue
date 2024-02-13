@@ -1,5 +1,5 @@
 <template>
-  <a href='#' class= "scroll-up icon-up btn-primary" :class="[show ? '' : 'hide']"></a>
+  <a href='#' class="scroll-up btn-primary icon-up" :class="[show ? '' : 'hide']"></a>
 </template>
 
 <script setup>
@@ -16,7 +16,7 @@ window.addEventListener('scroll',()=>{
 });
 </script>
 
-<style scoped>
+<style>
 .scroll-up {
   cursor: pointer;
   padding: 8px;
@@ -33,6 +33,11 @@ window.addEventListener('scroll',()=>{
 
 .scroll-up:hover {
   box-shadow: var(--shadow-primary);
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* Responsive */

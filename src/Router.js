@@ -1,15 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
 // Components
-import Home from './Pages/Home.vue';
-import Users from './Pages/Users.vue';
-import UserIndex from './Components/User-Index.vue';
-import UserPage from './Components/User-Page.vue';
-import EditUser from './Components/Edit-User.vue';
-import Post from './Pages/Post.vue';
-import PostIndex from './Components/Post-Index.vue';
-import PostPage from './Components/Post-Page.vue';
-import EditPost from './Components/Edit-Post.vue';
-import CreatePost from './Components/Create-Post.vue';
+import Home from './Pages/Home/Home.vue';
+import Users from './Pages/User/Users.vue';
+import UserIndex from './Pages/User/User-Index.vue';
+import UserPage from './Pages/User/User-Page.vue';
+import EditUser from './Pages/User/Edit-User.vue';
+import Post from './Pages/Post/Post.vue';
+import PostIndex from './Pages/Post/Post-Index.vue';
+import PostPage from './Pages/Post/Post-Page.vue';
+import EditPost from './Pages/Post/Edit-Post.vue';
+import CreatePost from './Pages/Post/Create-Post.vue';
 
 const routes = [
     { path: '/' , name: 'home' , component: Home },
@@ -17,14 +17,14 @@ const routes = [
     { path: '/users' , name: 'users' , component: Users , children: [
         { path: '' , name: 'user-index' , component: UserIndex },
         { path: ':id' , name: 'user-page' , component: UserPage }, 
-        { path: '/edit-user/:id' , name: 'edit-user' , component: EditUser }
+        { path: '/EditUser/:id' , name: 'edit-user' , component: EditUser }
     ]},
 
     { path: '/posts' , name: 'posts' , component: Post , children: [
         { path: '' , name: 'post-index' , component: PostIndex },
         { path: ':id' , name: 'post-page' , component: PostPage }, 
-        { path: '/edit-post/:id' , name: 'edit-post' , component: EditPost },
-        { path: '/create-post' , name: 'create-post' , component: CreatePost },  
+        { path: '/EditPost/:id' , name: 'edit-post' , component: EditPost },
+        { path: '/CreatePost' , name: 'create-post' , component: CreatePost },  
     ]}
 ];
 

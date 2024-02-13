@@ -1,9 +1,9 @@
 <template>
   <section class="container">
-    <h2 class="title-sm">&copy; 2024 alireza samadi</h2>
+    <h2 class="title-sm">&copy; 2024 amir dabbaghiyan</h2>
 
     <nav>
-      <a href="https://github.com/alirezasamadias/" class="icon-github"></a>
+      <a href="https://github.com/alirezasamadias/" class="social-icon icon-github"></a>
     </nav>
   </section>
 
@@ -16,19 +16,24 @@ import ScrollUp from '../Components/Scroll-Up.vue';
 </script>
 
 <style scoped>
+.container {
+  width: min(90%,1250px);
+  justify-content: space-between;
+}
+
+.social-icon {
+  font-size: 32px;
+  transition-duration: 0.25s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width:600px) {
   .container {
-    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 10px;
   }
-
-  .icon-github {
-    font-size: 32px;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      row-gap: 15px;
-    }
-  }
+}
 </style>

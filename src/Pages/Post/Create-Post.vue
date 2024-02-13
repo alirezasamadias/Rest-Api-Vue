@@ -1,11 +1,8 @@
 <template>
-  <div class="hero container">
-    <i class="hero-icon title-lg icon-create-post"></i>
-    <h2 class="title-lg">create user</h2>
-  </div>
-  
+  <Hero title="create post" icon="icon-create-post"/>
+
   <div class="container container-sm">
-    <form class="card" @submit.prevent="postCard">
+    <form class="card" @submit.prevent="Card">
       <div class="form-filed">
         <label for="title">title:</label>
         <input id="title" type="text" v-model="post.title" required>
@@ -22,6 +19,9 @@
 </template>
 
 <script setup>
+// Components
+import Hero from '@/Parts/Hero.vue';
+
 import axios from 'axios';
 import { reactive } from 'vue';
 import { urlPosts } from '@/Server/Api.js';
@@ -46,7 +46,7 @@ function clearForm() {
   post.body = '';
 }
 
-function postCard(){
+function Card(){
   if (post.title !== '' && post.body  !== '') {
     clearForm();
 

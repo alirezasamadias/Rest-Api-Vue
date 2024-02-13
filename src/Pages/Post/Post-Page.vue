@@ -1,27 +1,32 @@
 <template>
-  <div class="hero container">
-    <i class="hero-icon title-lg icon-post"></i>
-    <h2 class="title-lg">post</h2>
-  </div>
-
+  <Hero title="post" icon="icon-post"/>
+  
   <div class="container container-sm">
-    <section class="card">
-      <span class="card-id">{{post.id}}</span>
+    <Card :cardId="post.id">
+      <template v-slot:cardTitle>
+        <h3 class="card-title title-md">{{post.title}}</h3>
+      </template>
 
-      <h2 class="card-title title-md">{{post.title}}</h2>
-      
-      <p class="card-body">{{post.body}}</p>
+      <template v-slot:cardBody>
+        <p class="card-body">{{post.body}}</p>
+      </template>
 
-      <div class="card-btn">
-        <router-link :to="{name: 'edit-post' , params: {id: post.id} }" class="btn btn-primary">edit</router-link>
+      <template v-slot:cardBtn>
+        <div class="card-btn">
+          <router-link :to="{name: 'edit-post' , params: {id: post.id} }" class="btn btn-primary">edit</router-link>
 
-        <button class="btn btn-delete" @click="clear">delete</button>
-      </div>
-    </section>
+          <button class="btn btn-delete" @click="clear">delete</button>
+        </div>
+      </template>
+    </Card>
   </div>
 </template>
 
 <script setup>
+// Components
+import Hero from '@/Parts/Hero.vue';
+import Card from '@/Components/Card.vue';
+
 import axios from 'axios';
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
@@ -37,6 +42,7 @@ const fetchAPI = async () => {
 };
 
 fetchAPI();
+
 function clear(){
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
@@ -75,7 +81,6 @@ function clear(){
 }
 
 const deleteUser= async() => {
-  const response = await axios.delete(`${urlPosts}/${post.value.id}`);
-  console.log(response)
+  await axios.delete(`${urlPosts}/${post.value.id}`);
 }
 </script>

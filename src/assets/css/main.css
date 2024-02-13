@@ -73,10 +73,6 @@ i {
     display: inline-block;
 }
 
-*:has(img) {
-    display: grid;
-}
-
 img {
     display: block;
     width: 100%;
@@ -85,6 +81,9 @@ img {
     object-position: center center;
 }
 /* image alt */
+*:has(img) {
+    display: grid;
+}
 img::before {
     content: '\f128' ' Broken Image of ' attr(alt);
     width: 100%;
@@ -110,38 +109,6 @@ button {
     background-color: transparent;
 }
 
-/* form */
-input,
-textarea {
-    width: 100%;
-    padding: 15px;
-    background-color: #e6e6e6;
-    border: unset;
-    border-radius: 5px;
-    outline: none;
-    font-size: 15px;
-}
-
-textarea {
-    font-family: sans-serif;
-    line-height: inherit;
-}
-
-input[type=submit] {
-    margin-top: 30px;
-}
-
-.form-filed {
-    display: flex;
-    column-gap: 20px;
-}
-
-.form-filed label {
-    min-width: 65px;
-    padding-top: 12px;
-    text-transform: capitalize;
-}
-
 /* container */
 .container {
     width: min(100%,1250px);
@@ -155,6 +122,13 @@ input[type=submit] {
 
 .container-sm {
     width: min(100%,800px);
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: stretch;
+    gap: 10px;
 }
 
 /* title */
@@ -244,86 +218,6 @@ input[type=submit] {
     background-color: #008000;
 }
 
-/* global class */
-.hide {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.hero-icon {
-    min-width: 85px;
-    min-height: 85px;
-    padding: 15px;
-    margin-right: 10px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-.card-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    align-items: stretch;
-    gap: 10px;
-}
-
-.card {
-    width: 100%;
-    padding: 30px;
-    background-color: #9f9f9f91;
-    backdrop-filter: blur(80px) saturate(1.4);
-    border-radius: 20px;
-    text-align: left;
-    font-size: 17px;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    row-gap: 15px;
-    position: relative;
-}
-
-.card-id {
-    width: 40px;
-    height: 40px;
-    background-color: var(--secondary-color);
-    border-radius: 50%;
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-title {
-    padding-right: 40px;
-}
-
-.card-body {
-    margin-bottom: 30px;
-}
-
-.card-list {
-    padding: 10px 6%;
-}
-
-.card-list-item {
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-.card-btn {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.card-btn .btn {
-    width: 35%;
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
     p {
@@ -341,7 +235,7 @@ input[type=submit] {
 }
 
 @media (max-width:900px) {
-    .card-wrapper {
+    .card-container {
         grid-template-columns: repeat(1,1fr);
     }
 }
@@ -362,11 +256,6 @@ input[type=submit] {
     .title-lg {
         font-size: 42px;
     }
-
-        
-    .card-id {
-        transform: scale(0.85);
-    }
 }
 
 @media (max-width:376px) {
@@ -374,7 +263,7 @@ input[type=submit] {
     .title-lg {
         font-size: 34px;
     }
-
+    
     .title-md {
         font-size: 20px;
     }

@@ -1,41 +1,40 @@
 <template>
-  <div class="hero container">
-    <div class="hero-icon title-lg">
-      <i class="icon-user"></i>
-      <i class="icon-edit-user"></i>
-    </div>
+  <Hero title="edit user" icon="icon-user">
+      <template v-slot:icon>
+        <i class="icon-edit-user"></i>
+      </template>
+  </Hero>
 
-    <h2 class="title-lg">edit user</h2>
-  </div>
-  
-  <div class="container container-sm">
-    <form class="card">
+  <FormData @update="editCard">
+    <template v-slot:formFiles>
       <div class="form-filed">
         <label for="name">name:</label>
-        <input id="name" type="text" v-model="user.name">
+        <input id="name" type="text" v-model="user.name" required>
       </div>
 
       <div class="form-filed">
         <label for="email">email:</label>
-        <input id="email" type="email" v-model="user.email">
+        <input id="email" type="email" v-model="user.email" required>
       </div>
       
       <div class="form-filed">
         <label for="phone">phone:</label>
-        <input id="phone" type="tel" v-model="user.phone">
+        <input id="phone" type="tel" v-model="user.phone" required>
       </div>
 
       <div class="form-filed">
         <label for="website">website:</label>
-        <input id="website" type="url" v-model="user.website">
+        <input id="website" type="url" v-model="user.website" required>
       </div>
-      
-      <input type="submit" class="btn btn-primary" @click.prevent="editCard">
-    </form>
-  </div>
+    </template>
+  </FormData>
 </template>
 
 <script setup>
+// Components
+import Hero from '@/Parts/Hero.vue';
+import FormData from '@/Components/Form-Data.vue';
+
 import axios from 'axios';
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
@@ -43,12 +42,13 @@ import { urlUsers } from '@/Server/Api.js';
 import Swal from 'sweetalert2';
 
 const user = ref({});
-const route = useRoute()
+const route = useRoute();
 
 const fetchAPI = async () => {
   const response = await axios.get(`${urlUsers}/${route.params.id}`);
-  user.value = response.data
+  user.value = response.data;
 };
+
 fetchAPI();
 
 function editCard(){
@@ -89,11 +89,9 @@ function editCard(){
 }
 
 const sendCard = async()=>{
-  const response = await axios.put(`${urlUsers}/${user.value.id}`,{
+  await axios.put(`${urlUsers}/${user.value.id}`,{
     id: user.value.id,
     name: user.value.name
   });
-
-  console.log(response);
 };
 </script>

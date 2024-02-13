@@ -1,31 +1,30 @@
 <template>
-  <div class="hero container">
-    <div class="hero-icon title-lg title-lg">
-      <i class="icon-post"></i>
-      <i class="icon-edit-user"></i>
-    </div>
+  <Hero title="edit post" icon="icon-post">
+      <template v-slot:icon>
+        <i class="icon-edit-user"></i>
+      </template>
+  </Hero>
 
-    <h2 class="title-lg">edit post</h2>
-  </div>
-  
-  <div class="container container-sm">
-    <form class="card">
+  <FormData @getData="setData($event)" @update="editCard">
+    <template v-slot:formFiles>
       <div class="form-filed">
         <label for="title">title:</label>
-        <input id="title" type="text" v-model="post.title">
+        <input id="title" type="text" v-model="post.title" required>
       </div>
 
       <div class="form-filed">
         <label for="body">body:</label>
-        <textarea rows="6" id="body" v-model="post.body"></textarea>
+        <textarea rows="6" id="body" v-model="post.body" required></textarea>
       </div>
-      
-      <input type="submit" class="btn btn-primary" @click.prevent="editCard">
-    </form>
-  </div>
+    </template>
+  </FormData>
 </template>
 
 <script setup>
+// Components
+import Hero from '@/Parts/Hero.vue';
+import FormData from '@/Components/Form-Data.vue';
+
 import axios from 'axios';
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
@@ -33,12 +32,13 @@ import { urlPosts } from '@/Server/Api.js';
 import Swal from 'sweetalert2';
 
 const post = ref({});
-const route = useRoute()
+const route = useRoute();
 
 const fetchAPI = async () => {
   const response = await axios.get(`${urlPosts}/${route.params.id}`);
-  post.value = response.data
+  post.value = response.data;
 };
+
 fetchAPI();
 
 function editCard(){
@@ -79,11 +79,9 @@ function editCard(){
 }
 
 const sendCard = async()=>{
-  const response = await axios.put(`${urlPosts}/${post.value.id}`,{
+  await axios.put(`${urlPosts}/${post.value.id}`,{
     id: post.value.id,
     name: post.value.name
   });
-
-  console.log(response);
 };
 </script>
