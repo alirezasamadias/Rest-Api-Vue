@@ -2,9 +2,11 @@
 
 ![Screen Project](src/assets/Images/Screen-Project.png)
 
-## Url
+### Url
+https://restapivue2024.netlify.app/
 
 ### About
+A small project with Vue and using axios to get data This project.
 
 ## Project setup
 ```
